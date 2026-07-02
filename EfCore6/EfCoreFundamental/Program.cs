@@ -10,8 +10,10 @@ namespace EfCoreFundamental
         static void Main(string[] args)
         {
             _dbContext = new PubContext();
-           //  BulkOperationAddAuthors();
-           GetAuthors();
+            //  BulkOperationAddAuthors();
+            // GetAuthors();
+
+            GetOneAuthor();
         } 
 
         static void BulkOperationAddAuthors()
