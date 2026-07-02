@@ -13,8 +13,20 @@ namespace EfCoreFundamental
             //  BulkOperationAddAuthors();
             // GetAuthors();
 
-            GetOneAuthor();
+            BulkOperationAddAuthors2();
         } 
+
+        static void BulkOperationAddAuthors2()
+        {
+            List<Author> authors = new List<Author>();
+            for (int i = 0; i < 1000; i++)
+            {
+                authors.Add(new Author { FirstName = $"Julie{i}", LastName = $"Lerman{i}" });
+            }
+
+            _dbContext.Authors.AddRange(authors);
+            _dbContext.SaveChanges();
+        }
 
         static void BulkOperationAddAuthors()
         {
